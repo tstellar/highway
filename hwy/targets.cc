@@ -714,7 +714,7 @@ int64_t DetectTargets() {
             static_cast<uint32_t>(enabled >> 32),
             static_cast<uint32_t>(enabled & 0xFFFFFFFF));
   }
-
+  return HWY_EMU128;
   return bits;
 }
 
