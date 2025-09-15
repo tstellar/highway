@@ -257,9 +257,9 @@
 // SVE[2] require recent clang or gcc versions.
 
 #ifndef HWY_BROKEN_SVE  // allow override
-// GCC 10+. Clang 19 still has many test failures for SVE. No Apple CPU (at
+// GCC 10+. Clang 21 still has many test failures for SVE. No Apple CPU (at
 // least up to and including M4 and A18) has SVE.
-#if (HWY_COMPILER_CLANG && HWY_COMPILER_CLANG < 2000) ||           \
+#if (HWY_COMPILER_CLANG && HWY_COMPILER_CLANG < 2200) ||           \
     (HWY_COMPILER_GCC_ACTUAL && HWY_COMPILER_GCC_ACTUAL < 1000) || \
     HWY_OS_APPLE
 #define HWY_BROKEN_SVE (HWY_SVE | HWY_SVE_256)
@@ -269,8 +269,8 @@
 #endif  // HWY_BROKEN_SVE
 
 #ifndef HWY_BROKEN_SVE2  // allow override
-// Clang 19 still has many test failures for SVE2.
-#if (HWY_COMPILER_CLANG && HWY_COMPILER_CLANG < 2000) ||           \
+// Clang 21 still has many test failures for SVE2.
+#if (HWY_COMPILER_CLANG && HWY_COMPILER_CLANG < 2200) ||           \
     (HWY_COMPILER_GCC_ACTUAL && HWY_COMPILER_GCC_ACTUAL < 1000) || \
     HWY_OS_APPLE
 #define HWY_BROKEN_SVE2 (HWY_SVE2 | HWY_SVE2_128)
